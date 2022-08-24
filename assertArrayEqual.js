@@ -12,5 +12,16 @@ const eqArrays= function(arrayValue1,arrayValue2){
 }
     return true;
 };
+
+const asserArrayEqual= function(actual,expected){
+    if(eqArrays(actual,expected)){
+        console.log(`Assertion Passed: ${actual} === ${expected}`);
+        }else {
+            console.log(`Assertion Passed: ${actual} === ${expected}`);
+        }
+        };
+        
+
 console.log(eqArrays([1, 2,3], [1, 2, 3]));
 console.log(eqArrays([13, 4,4], [14, 6, 4]));
+
