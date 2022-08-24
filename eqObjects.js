@@ -21,10 +21,12 @@ const assertEqual = function(actual, expected) {
     };
 
     const eqObjects= function(object1,object2){
-        let keyValue1=Object.keys(object1)
-        let keyValue2=Object.keys(object2)
+        let keyValue1=Object.keys(object1);
+        let keyValue2=Object.keys(object2);
         
-        if(keyValue1.length === keyValue2.length){
+        if(keyValue1.length !== keyValue2.length){
+            return false;
+        }
         for(let keys1 of keyValue1){
             console.log(keys1)
             const abstractedValue1=keyValue1[keys1]
@@ -38,12 +40,11 @@ const assertEqual = function(actual, expected) {
             }
             return true;
             }
-        }
-    };
+        };
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
-eqObjects(ab, ba); // => true
+console.log(eqObjects(ab, ba)); // => true
 
 const abc = { a: "1", b: "2", c: "3" };
-eqObjects(ab, abc); // => false
+console.log(eqObjects(ab, abc)); // => false
