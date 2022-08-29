@@ -1,26 +1,3 @@
-const eqArrays= function(arrayValue1,arrayValue2){
-    if(arrayValue1.length !==arrayValue2.length){
-        return false;
-    }
-    for(let i=0; i<arrayValue1.length;i++){
-        if(Array.isArray(arrayValue1[i]) &&(eqArrays(arrayValue1[i],arrayValue2[i]) === false)){
-        return false;
-    }
-    if(!(Array.isArray(arrayValue1[i]))&& arrayValue1[i] !==arrayValue2[i]){
-        return false
-    }
-}
-    return true;
-};
-
-const asserArrayEqual= function(actual,expected){
-    if(eqArrays(actual,expected)){
-        console.log(`Assertion Passed: ${actual} === ${expected}`);
-        }else {
-            console.log(`Assertion Passed: ${actual} === ${expected}`);
-        }
-        };
-
 const middle= function(arrayValue){
     if(arrayValue.length <3){
         return console.log("Their is know middle value");
@@ -34,14 +11,4 @@ const middle= function(arrayValue){
 
     }   
 }
-console.log(middle([1]) )
-console.log(middle([1, 2]))
-
-console.log(middle([1, 2, 3]))
-console.log(middle([1, 2, 3, 4, 5]))
-
-console.log(middle([1, 2, 3, 4]) )
-console.log(middle([1, 2, 3, 4, 5, 6]) )
-
-console.log(eqArrays([1, 2,3], [1, 2, 3]));
-console.log(eqArrays([13, 4,4], [14, 6, 4]));
+module.exports=middle;
