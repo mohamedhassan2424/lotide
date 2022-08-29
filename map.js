@@ -12,7 +12,8 @@ const eqArrays= function(arrayValue1,arrayValue2){
 }
     return true;
 };
-
+// AssertArratEqual and eqArray are found above
+//the map.js code is written below
 const assertArrayEqual= function(actual,expected){
     if(eqArrays(actual,expected)){
         console.log(`Assertion Passed: ${actual} === ${expected}`);
@@ -20,8 +21,23 @@ const assertArrayEqual= function(actual,expected){
             console.log(`Assertion Passed: ${actual} === ${expected}`);
         }
         };
-        
 
-console.log(eqArrays([1, 2,3], [1, 2, 3]));
-console.log(eqArrays([13, 4,4], [14, 6, 4]));
 
+
+
+const words = ["ground", "control", "to", "major", "tom"];
+const map= function(array,callback){
+    //console.log('array',array);
+    //console.log('callback',callback);
+    
+    const results=[];
+    for(let item of array){
+        results.push(callback(item))
+        //console.log('item BEFORE: ', item);
+       // console.log('item AFTER: ', callback(item));
+       // console.log('---');
+    }
+    return results;
+}
+const results1= map(words, word=>word[0]);
+console.log(results1);
